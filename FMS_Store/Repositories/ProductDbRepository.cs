@@ -15,7 +15,7 @@ namespace FMS_Store.Repositories
             db = _db;
         }
 
-
+      
 
 
         public void Add(Product entity)
@@ -50,6 +50,14 @@ namespace FMS_Store.Repositories
             db.Update(newProduct);
             db.SaveChanges();
         }
+        public List<Product> Search (string term)
+        {
+            var resault = db.Products.Include(a => a.Category).Where(b =>b.Name.Contains(term)
+            || b.Description.Contains(term)).ToList();
+
+            return resault;
+        }
+
     }
     
 }

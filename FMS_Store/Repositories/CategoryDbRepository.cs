@@ -49,7 +49,10 @@ namespace FMS_Store.Repositories
             db.SaveChanges();
         }
 
-
+        public List<Category> Search (string term)
+        {
+            return db.Categories.Where(a => a.Type.Contains(term)).ToList();
+        }
 
 
     }

@@ -60,17 +60,7 @@ namespace FMS_Store.Controllers
             {
                 try
                 {
-                    string fileName = string.Empty;
-                    if(model.File != null)
-                    {
-                        string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");
-                        fileName = model.File.FileName;
-                        string fullPath = Path.Combine(Uploads,fileName);
-                        using (var fileStream = new FileStream(fullPath, FileMode.Create))
-                        {
-                            model.File.CopyTo(fileStream);
-                        }
-                    }
+                    string fileName = UploadFile(model.File) ?? string.Empty;                    
 
                     if (model.CategoryId == -1)
                     {
@@ -139,41 +129,23 @@ namespace FMS_Store.Controllers
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id,ProductCategoryViewModel viewModel)
+        public ActionResult Edit(ProductCategoryViewModel viewModel)
         {
             try
             {
 
-                //string fileName = string.Empty;
-                string fileName = "";
-                if (fileName == null)
-                {
-                    fileName = string.Empty;
-                }
-                else
-                //fileName = Path.GetFileName(fileName);
-                    fileName= viewModel.ImageUrl;
+                ////string fileName = string.Empty;
+                //string fileName = "";
+                //if (fileName == null)
+                //{
+                //    fileName = string.Empty;
+                //}
+                //else
+                ////fileName = Path.GetFileName(fileName);
+                //    fileName= viewModel.ImageUrl;
 
 
-                if (viewModel.File != null)
-                {
-                    string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");
-                    fileName = viewModel.File.FileName;
-                    string fullPath = Path.Combine(Uploads, fileName);
-                    //Delete the old file
-                    string oldFileName = viewModel.ImageUrl;
-                    string fullOldPath = Path.Combine(Uploads ,oldFileName);
-
-                    if(fullPath != fullOldPath)
-                    {
-                        System.IO.File.Delete(fullOldPath);
-                        //Save the new file
-                        using (var fileStream = new FileStream(fullPath, FileMode.Create))
-                        {
-                            viewModel.File.CopyTo(fileStream);
-                        }
-                    }
-                }
+                string fileName = UploadFile(viewModel.File,viewModel.ImageUrl);
 
                 var category = categoryRepository.Find(viewModel.CategoryId);
                 Product product = new Product
@@ -232,6 +204,48 @@ namespace FMS_Store.Controllers
                 Categories = FillSelectList()
             };
             return vmodel;
+        }
+        string UploadFile(IFormFile file)
+        {
+            if (file != null)
+            {
+                string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");            
+                string fullPath = Path.Combine(Uploads, file.FileName);
+                using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                {
+                    file.CopyTo(fileStream);
+                }
+                return file.FileName;
+            }
+            return null;
+        }
+        string UploadFile(IFormFile file, string imageUrl)
+        {
+            if (file != null)
+            {
+                string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");
+                string newPath = Path.Combine(Uploads, file.FileName);
+                //Delete the old file
+                string OldPath = Path.Combine(Uploads, imageUrl);
+
+                if (OldPath != newPath)
+                {
+                    System.IO.File.Delete(OldPath);
+                    //Save the new file
+                    using (var fileStream = new FileStream(newPath, FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                }
+                return file.FileName;
+            }
+            return imageUrl;    
+        }
+        public ActionResult Search (string term)
+        {
+            var result = productRepository.Search(term);
+
+            return View("Index",result);    
         }
     }
 }
