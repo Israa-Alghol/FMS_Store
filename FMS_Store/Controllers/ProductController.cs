@@ -3,6 +3,7 @@ using FMS_Store.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -105,11 +106,23 @@ namespace FMS_Store.Controllers
         public ActionResult Edit(int id)
         {
             var product = productRepository.Find(id);
-            var categoryId = 
-                product.Category == null ? product.Category.Id = 0 : product.Category.Id;
-            
+            //var categoryId = 
+            // product.Category == null ? product.Category.Id = 0 : product.Category.Id;
 
-            var viewModel = new ProductCategoryViewModel()
+      
+            var categoryId = 0;
+            if (product.Category == null)
+            {
+
+                categoryId = product.Id;
+                product.Category.Id = 0;
+            }
+            else
+
+                categoryId = product.Category.Id;
+
+
+            var viewModel = new ProductCategoryViewModel
             {
                 ProductId = product.Id,
                 Name = product.Name,
@@ -126,18 +139,29 @@ namespace FMS_Store.Controllers
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProductCategoryViewModel viewModel)
+        public ActionResult Edit(int id,ProductCategoryViewModel viewModel)
         {
             try
             {
-                string fileName = string.Empty;
+
+                //string fileName = string.Empty;
+                string fileName = "";
+                if (fileName == null)
+                {
+                    fileName = string.Empty;
+                }
+                else
+                //fileName = Path.GetFileName(fileName);
+                    fileName= viewModel.ImageUrl;
+
+
                 if (viewModel.File != null)
                 {
                     string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");
                     fileName = viewModel.File.FileName;
                     string fullPath = Path.Combine(Uploads, fileName);
                     //Delete the old file
-                    string oldFileName = productRepository.Find(viewModel.ProductId).ImageUrl;
+                    string oldFileName = viewModel.ImageUrl;
                     string fullOldPath = Path.Combine(Uploads ,oldFileName);
 
                     if(fullPath != fullOldPath)
@@ -161,7 +185,7 @@ namespace FMS_Store.Controllers
                     Category = category,
                     ImageUrl = fileName
                 };
-                productRepository.Update(product);
+                productRepository.Update(viewModel.ProductId, product);
                 return RedirectToAction(nameof(Index));
                 
             }

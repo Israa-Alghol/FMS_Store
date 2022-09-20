@@ -34,7 +34,7 @@ namespace FMS_Store.Repositories
 
         public Product Find(int id)
         {
-            var product = db.Products.SingleOrDefault(p => p.Id == id);
+            var product = db.Products.Include(a => a.Category).SingleOrDefault(p => p.Id == id);
             return product;
         }
 
@@ -45,7 +45,7 @@ namespace FMS_Store.Repositories
 
 
 
-        public void Update(Product newProduct)
+        public void Update(int id,Product newProduct)
         {
             db.Update(newProduct);
             db.SaveChanges();

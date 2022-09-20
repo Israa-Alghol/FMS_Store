@@ -43,7 +43,7 @@ namespace FMS_Store.Repositories
 
 
 
-        public void Update(Category newcategory)
+        public void Update(int id,Category newcategory)
         {
             db.Update(newcategory);
             db.SaveChanges();

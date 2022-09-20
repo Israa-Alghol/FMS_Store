@@ -75,11 +75,11 @@ namespace FMS_Store.Controllers
         // POST: CategoryController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Category category)
+        public ActionResult Edit(int id,Category category)
         {
             try
             {
-                categoryRepository.Update( category);
+                categoryRepository.Update(id, category);
                 return RedirectToAction(nameof(Index));
             }
             catch

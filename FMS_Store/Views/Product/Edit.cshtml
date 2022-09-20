@@ -38,6 +38,7 @@
                 <span asp-validation-for="File" class="text-danger"></span>
                 <img src = "~/Uploads/@Model.ImageUrl" style = "width: 64px;" class = "img-thumbnail"/>
             </div>
+            <input type="hidden" asp-for="ImageUrl" class="form-control" />
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
                 <select asp-for="CategoryId" class="form-control" 
