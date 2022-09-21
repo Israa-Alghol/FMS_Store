@@ -134,18 +134,16 @@ namespace FMS_Store.Controllers
             try
             {
 
-                ////string fileName = string.Empty;
+                //string fileName = string.Empty;
                 //string fileName = "";
-                //if (fileName == null)
+                //if (viewModel.File == null)
                 //{
-                //    fileName = string.Empty;
+                //    fileName = productRepository.Find(viewModel.ProductId).ImageUrl;
                 //}
                 //else
-                ////fileName = Path.GetFileName(fileName);
-                //    fileName= viewModel.ImageUrl;
+                //    fileName = UploadFile(viewModel.File, viewModel.ImageUrl);
 
-
-                string fileName = UploadFile(viewModel.File,viewModel.ImageUrl);
+                string fileName = UploadFile(viewModel.File, viewModel.ImageUrl) ?? string.Empty;
 
                 var category = categoryRepository.Find(viewModel.CategoryId);
                 Product product = new Product
@@ -157,7 +155,7 @@ namespace FMS_Store.Controllers
                     Category = category,
                     ImageUrl = fileName
                 };
-                productRepository.Update(viewModel.ProductId, product);
+                productRepository.Update(product);
                 return RedirectToAction(nameof(Index));
                 
             }
@@ -221,7 +219,7 @@ namespace FMS_Store.Controllers
         }
         string UploadFile(IFormFile file, string imageUrl)
         {
-            if (file != null)
+           if (file != null)
             {
                 string Uploads = Path.Combine(hosting.WebRootPath, "Uploads");
                 string newPath = Path.Combine(Uploads, file.FileName);

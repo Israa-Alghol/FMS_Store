@@ -12,9 +12,6 @@ namespace FMS_Store.Repositories
         {
             db = _db;
         }
-     
-
-
 
         public void Add(Category entity)
         {
@@ -43,7 +40,7 @@ namespace FMS_Store.Repositories
 
 
 
-        public void Update(int id,Category newcategory)
+        public void Update(Category newcategory)
         {
             db.Update(newcategory);
             db.SaveChanges();

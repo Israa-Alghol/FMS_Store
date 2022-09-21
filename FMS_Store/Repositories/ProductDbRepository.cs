@@ -15,8 +15,6 @@ namespace FMS_Store.Repositories
             db = _db;
         }
 
-      
-
 
         public void Add(Product entity)
         {
@@ -34,7 +32,7 @@ namespace FMS_Store.Repositories
 
         public Product Find(int id)
         {
-            var product = db.Products.Include(a => a.Category).SingleOrDefault(p => p.Id == id);
+            var product = db.Products.Include(a => a.Category).FirstOrDefault(p => p.Id == id);
             return product;
         }
 
@@ -43,9 +41,12 @@ namespace FMS_Store.Repositories
             return db.Products.Include(a => a.Category).ToList();
         }
 
+        //public IList<Product> GetProductById(int id)
+        //{
+        //    return db.Products.Include(a => a.Category).ToList();
+        //}
 
-
-        public void Update(int id,Product newProduct)
+        public void Update(Product newProduct)
         {
             db.Update(newProduct);
             db.SaveChanges();

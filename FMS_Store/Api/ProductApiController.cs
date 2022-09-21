@@ -8,10 +8,10 @@ namespace FMS_Store.Api
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ProductControllerApi : ControllerBase
+    public class ProductApiController : ControllerBase
     {
         private readonly IRepo<Product> _dataRepository;
-        public ProductControllerApi(IRepo<Product> dataRepository)
+        public ProductApiController(IRepo<Product> dataRepository)
         {
             _dataRepository = dataRepository;   
         }
