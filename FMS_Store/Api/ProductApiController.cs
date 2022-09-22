@@ -48,18 +48,6 @@ namespace FMS_Store.Api
             }
         }
 
-        [HttpDelete]
-        public ActionResult<bool> Delete(int id)
-        {
-            try
-            {
-                _dataRepository.Delete(id);
-                return Ok(true);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
+        
     }
 }
