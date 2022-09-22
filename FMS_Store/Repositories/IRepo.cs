@@ -7,6 +7,7 @@ namespace FMS_Store
     public interface IRepo<TEntity>
     {
         IList<TEntity> List();
+        IList<TEntity> List(Func<Product, bool> filter);
         TEntity Find (int id);
         void Add (TEntity entity);
         void Delete (int id);   

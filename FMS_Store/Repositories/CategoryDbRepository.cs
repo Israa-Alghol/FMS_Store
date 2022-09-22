@@ -1,5 +1,6 @@
 ﻿using FMS_Store.Models;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 
 namespace FMS_Store.Repositories
@@ -37,7 +38,10 @@ namespace FMS_Store.Repositories
         {
             return db.Categories.ToList();
         }
-
+        public IList<Category> List(Func<Product, bool> filter)
+        {
+            return db.Categories.ToList();
+        }
 
 
         public void Update(Category newcategory)

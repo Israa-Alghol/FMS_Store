@@ -41,6 +41,11 @@ namespace FMS_Store.Repositories
             return db.Products.Include(a => a.Category).ToList();
         }
 
+        public IList<Product> List(Func<Product, bool> filter)
+        {
+            return db.Products.Include(a => a.Category).Where(filter).ToList();
+        }
+
         //public IList<Product> GetProductById(int id)
         //{
         //    return db.Products.Include(a => a.Category).ToList();

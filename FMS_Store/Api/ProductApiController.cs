@@ -1,4 +1,5 @@
 ﻿using FMS_Store.Models;
+using FMS_Store.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,18 +12,31 @@ namespace FMS_Store.Api
     public class ProductApiController : ControllerBase
     {
         private readonly IRepo<Product> _dataRepository;
+
         public ProductApiController(IRepo<Product> dataRepository)
         {
-            _dataRepository = dataRepository;   
+            _dataRepository = dataRepository;
         }
 
         [HttpGet]
-        public ActionResult<List<Product>> GetAll()
+        public ActionResult<List<Product>> GetAll(int? categoryId)
         {
             try
             {
-                var result = _dataRepository.List();
-                return Ok(result);  
+                if(categoryId == null)
+                {
+                    var result = _dataRepository.List();
+                    return Ok(result);
+                    
+                }
+                    
+                else
+                {
+                    var result = _dataRepository.List(a => a.CategoryId == categoryId );
+                    return Ok(result);
+                }
+                    
+                
             }
             catch (Exception ex)
             {
@@ -36,9 +50,9 @@ namespace FMS_Store.Api
             try
             {
                 var result = _dataRepository.Find(id);
-                if(result == null)
+                if (result == null)
                 {
-                    return NotFound();  
+                    return NotFound();
                 }
                 return Ok(result);
             }
@@ -49,5 +63,6 @@ namespace FMS_Store.Api
         }
 
         
+     
     }
 }
