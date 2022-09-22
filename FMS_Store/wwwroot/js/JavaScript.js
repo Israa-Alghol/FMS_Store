@@ -13,7 +13,7 @@ async function get() {
             `
                 <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img src= "/Uploads/'+${p.data}+'" class="card-img-top" width="250">
+                    <img src= "/Uploads/${p.imageUrl}" class="card-img-top" width="250">
                     <div class="card-body">
                         <h5 class="card-title">${p.name}</h5>
                         <p class="card-text">${p.description}</p>
