@@ -1,9 +1,12 @@
 ﻿const postSection = document.querySelector('#content');
 const row = document.querySelector("#row");
 const cat = document.querySelector("#cat");
+const cart = document.querySelector("#cart");
+
 var filterInput = document.getElementById("cat");
 var values = [];
 var Id = [];
+var ProId = [];
 var input = "";
 
 async function getcat() {
@@ -42,7 +45,7 @@ async function get() {
     //input = filterInput.value;
 
     data.forEach(p => {
-
+        ProId.push(p.id);
         row.innerHTML +=
             `
                 <div class="col-4">
@@ -51,21 +54,22 @@ async function get() {
                     <div class="card-body">
                         <h5 class="card-title">${p.name}</h5>
                         <p class="card-text">${p.description}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <button onclick="addToCart(${p.id},this)" class="btn btn-sm float-right btn-info">Add To Cart+</button>
                     </div>
                 </div>
             </div>
-            `;       
+            `;
+       
     })
     
 }
-
+console.log(ProId);
 async function filterProducts(i) {
     while (row.childNodes.length > 1)
         row.removeChild(row.lastChild);
     const response = await fetch(`https://localhost:44314/api/ProductApi/GetAll?categoryId=${i}`)
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     data.forEach(p => {
 
         row.innerHTML +=
@@ -76,13 +80,24 @@ async function filterProducts(i) {
                     <div class="card-body">
                         <h5 class="card-title">${p.name}</h5>
                         <p class="card-text">${p.description}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <button onclick="addToCart(${p.id},this)" class="btn btn-sm float-right btn-info">Add To Cart+</button>
                     </div>
                 </div>
             </div>
             `;
     })
 
+}
+let arr = [];
+function addToCart(id,ele) {
+    arr.push(id);
+    console.log(ele)
+    localStorage.setItem('names', JSON.stringify(arr));
+    let items = JSON.parse(localStorage.getItem('names'));
+    //console.log(items.length);
+    $(cart).html(items.length);
+    $(ele).attr('disabled', 'true');
+    
 }
 
 getcat().then();

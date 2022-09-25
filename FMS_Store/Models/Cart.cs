@@ -12,10 +12,8 @@ namespace FMS_Store.Models
         public int Amount { get; set; }
         public double totalPrice { get; set; }
 
-        public int productId { get; set; }
         [ForeignKey("productId")]
-        public Product product { get; set; }
-
+        public int productId { get; set; }
 
     }
 
