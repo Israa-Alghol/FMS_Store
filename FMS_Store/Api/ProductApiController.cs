@@ -12,10 +12,12 @@ namespace FMS_Store.Api
     public class ProductApiController : ControllerBase
     {
         private readonly IRepo<Product> _dataRepository;
+        private readonly IRepo<Category> _dataRepository2;
 
-        public ProductApiController(IRepo<Product> dataRepository)
+        public ProductApiController(IRepo<Product> dataRepository, IRepo<Category> dataRepository2)
         {
             _dataRepository = dataRepository;
+            _dataRepository2 = dataRepository2;
         }
 
         [HttpGet]
@@ -61,8 +63,25 @@ namespace FMS_Store.Api
                 return StatusCode(500, ex.Message);
             }
         }
+        [HttpGet]
+        public ActionResult<Category> GetCat()
+        {
+            try
+            {
 
-        
-     
+                var result = _dataRepository2.List();
+                if (result == null)
+                {
+                    return NotFound();
+                }
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
     }
 }
