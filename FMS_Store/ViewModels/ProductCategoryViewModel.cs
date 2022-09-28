@@ -21,7 +21,7 @@ namespace FMS_Store.ViewModels
 
         public string Description { get; set; }
 
-        public int CategoryId { get; set; }
+        public int Category { get; set; }
 
         public List<Category> Categories { get; set; }
 

@@ -62,14 +62,14 @@ namespace FMS_Store.Controllers
                 {
                     string fileName = UploadFile(model.File) ?? string.Empty;                    
 
-                    if (model.CategoryId == -1)
+                    if (model.Category == -1)
                     {
                         ViewBag.Message = "Please select an category from the list!";
 
                         return View(GetAllCategories());
                     }
 
-                    var category = categoryRepository.Find(model.CategoryId);
+                    var category = categoryRepository.Find(model.Category);
                     Product product = new Product
                     {
                         Id = model.ProductId,
@@ -118,7 +118,7 @@ namespace FMS_Store.Controllers
                 Name = product.Name,
                 Price = product.Price,
                 Description = product.Description,
-                CategoryId = categoryId,
+                Category = categoryId,
                 //CategoryId = product.Category.Id,
                 Categories = categoryRepository.List().ToList(),
                 ImageUrl = product.ImageUrl
@@ -145,7 +145,7 @@ namespace FMS_Store.Controllers
 
                 string fileName = UploadFile(viewModel.File, viewModel.ImageUrl) ?? string.Empty;
 
-                var category = categoryRepository.Find(viewModel.CategoryId);
+                var category = categoryRepository.Find(viewModel.Category);
                 Product product = new Product
                 {
                     Id=viewModel.ProductId,

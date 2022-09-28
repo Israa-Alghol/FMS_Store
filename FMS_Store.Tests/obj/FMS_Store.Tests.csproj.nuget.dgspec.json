@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {}
+    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store.Tests\\FMS_Store.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {
+    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store.Tests\\FMS_Store.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
-        "projectName": "FMS_Store",
-        "projectPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
+        "projectUniqueName": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store.Tests\\FMS_Store.Tests.csproj",
+        "projectName": "FMS_Store.Tests",
+        "projectPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store.Tests\\FMS_Store.Tests.csproj",
         "packagesPath": "C:\\Users\\Ialghoul\\.nuget\\packages\\",
-        "outputPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\obj\\",
+        "outputPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ialghoul\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,25 +44,25 @@
               "target": "Package",
               "version": "[7.3.1, )"
             },
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[3.1.29, )"
+              "version": "[16.11.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
+            "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.29, )"
+              "version": "[3.1.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "xunit": {
               "target": "Package",
-              "version": "[3.1.29, )"
+              "version": "[2.4.1, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.29, )"
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
@@ -76,9 +76,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
