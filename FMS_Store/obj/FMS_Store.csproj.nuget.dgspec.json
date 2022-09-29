@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {}
+    "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {}
   },
   "projects": {
-    "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {
+    "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
+        "projectUniqueName": "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
         "projectName": "FMS_Store",
-        "projectPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
+        "projectPath": "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
         "packagesPath": "C:\\Users\\Ialghoul\\.nuget\\packages\\",
-        "outputPath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\obj\\",
+        "outputPath": "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ialghoul\\AppData\\Roaming\\NuGet\\NuGet.Config",

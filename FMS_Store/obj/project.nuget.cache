@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P7ce9dPD1o6evC0fpAmsMpbkR+I5P1btsCr1WuowidZu81pjVSJ5FW4Y+JDvHa6goDejxCdZ66MkaQp3nwaoZA==",
+  "dgSpecHash": "g0eoN3RJS41Vc+S4yVQrLTcnjb8nbxnurGp5IEG2FuJ7pR9cxwWRzw09dVJiYrJVysUEoQ1NtvOMAIF/XWCoVA==",
   "success": true,
-  "projectFilePath": "D:\\Israa's Work Files\\Projects\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
+  "projectFilePath": "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ialghoul\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\fakeiteasy\\7.3.1\\fakeiteasy.7.3.1.nupkg.sha512",

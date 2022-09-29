@@ -3,7 +3,7 @@ using Xunit;
 
 namespace FMS_Store.Tests
 {
-    public class UnitTest1
+    public class DummyDataDBInitializer
     {
         [Fact]
         public void Test1()
