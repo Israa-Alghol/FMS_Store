@@ -12,7 +12,6 @@ namespace FMS_Store.ViewModels
 
         [Required]
         [MaxLength(100)]
-        [MinLength(1)]
         // [StringLength(20, MinimumLength = 1)]
         public string Name { get; set; }
 

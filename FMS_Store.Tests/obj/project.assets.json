@@ -2,25 +2,16 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Castle.Core/4.3.1": {
+      "Castle.Core/5.1.0": {
         "type": "package",
         "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "System.Collections.Specialized": "4.3.0",
-          "System.ComponentModel": "4.3.0",
-          "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.TraceSource": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Emit": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
+          "System.Diagnostics.EventLog": "4.7.0"
         },
         "compile": {
-          "lib/netstandard1.5/Castle.Core.dll": {}
+          "lib/netstandard2.1/Castle.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.5/Castle.Core.dll": {}
+          "lib/netstandard2.1/Castle.Core.dll": {}
         }
       },
       "coverlet.collector/3.1.0": {
@@ -41,15 +32,18 @@
           "lib/netstandard2.1/FakeItEasy.dll": {}
         }
       },
-      "FluentAssertions/3.1.229": {
+      "FluentAssertions/5.0.0": {
         "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0"
+        },
         "compile": {
-          "lib/net45/FluentAssertions.Core.dll": {},
-          "lib/net45/FluentAssertions.dll": {}
+          "lib/netstandard2.0/FluentAssertions.dll": {}
         },
         "runtime": {
-          "lib/net45/FluentAssertions.Core.dll": {},
-          "lib/net45/FluentAssertions.dll": {}
+          "lib/netstandard2.0/FluentAssertions.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -418,7 +412,7 @@
           "buildMultiTargeting/Microsoft.NET.Test.Sdk.props": {}
         }
       },
-      "Microsoft.NETCore.Platforms/2.0.0": {
+      "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -693,11 +687,11 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Microsoft.Win32.Registry/4.5.0": {
+      "Microsoft.Win32.Registry/4.7.0": {
         "type": "package",
         "dependencies": {
-          "System.Security.AccessControl": "4.5.0",
-          "System.Security.Principal.Windows": "4.5.0"
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
           "ref/netstandard2.0/_._": {}
@@ -714,6 +708,18 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Moq/4.18.2": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Moq.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -1115,7 +1121,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -1189,7 +1195,7 @@
           "System.Security.Permissions": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -1228,6 +1234,26 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
+      "System.Diagnostics.EventLog/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.Registry": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Diagnostics.EventLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Diagnostics.EventLog.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Diagnostics.Tools/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1237,33 +1263,6 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
-        }
-      },
-      "System.Diagnostics.TraceSource/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -1707,7 +1706,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll": {}
@@ -1752,7 +1751,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -1935,14 +1934,14 @@
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         }
       },
-      "System.Security.AccessControl/4.5.0": {
+      "System.Security.AccessControl/4.7.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Security.Principal.Windows": "4.5.0"
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -2178,29 +2177,26 @@
           "System.Security.AccessControl": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Permissions.dll": {}
         }
       },
-      "System.Security.Principal.Windows/4.5.0": {
+      "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0"
-        },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.dll": {
+          "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll": {
+          "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2517,8 +2513,10 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "FakeItEasy": "7.3.1",
+          "FluentAssertions": "5.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.29",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.29"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.29",
+          "Moq": "4.18.2"
         },
         "compile": {
           "bin/placeholder/FMS_Store.dll": {}
@@ -2533,28 +2531,27 @@
     }
   },
   "libraries": {
-    "Castle.Core/4.3.1": {
-      "sha512": "8Y/eTr6GTElAGV7eAmJuhfLhGdFpNvaNrQ9UQYDScziLmX+/BLGM+9eQr0IcdNDcPN0ADmbtwT6MgecGKy4obw==",
+    "Castle.Core/5.1.0": {
+      "sha512": "31UJpTHOiWq95CDOHazE3Ub/hE/PydNWsJMwnEVTqFFP4WhAugwpaVGxzOxKgNeSUUeqS2W6lxV+q7u1pAOfXg==",
       "type": "package",
-      "path": "castle.core/4.3.1",
+      "path": "castle.core/5.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ASL - Apache Software Foundation License.txt",
         "CHANGELOG.md",
         "LICENSE",
-        "castle.core.4.3.1.nupkg.sha512",
+        "castle-logo.png",
+        "castle.core.5.1.0.nupkg.sha512",
         "castle.core.nuspec",
-        "lib/net35/Castle.Core.dll",
-        "lib/net35/Castle.Core.xml",
-        "lib/net40/Castle.Core.dll",
-        "lib/net40/Castle.Core.xml",
-        "lib/net45/Castle.Core.dll",
-        "lib/net45/Castle.Core.xml",
-        "lib/netstandard1.3/Castle.Core.dll",
-        "lib/netstandard1.3/Castle.Core.xml",
-        "lib/netstandard1.5/Castle.Core.dll",
-        "lib/netstandard1.5/Castle.Core.xml",
+        "lib/net462/Castle.Core.dll",
+        "lib/net462/Castle.Core.xml",
+        "lib/net6.0/Castle.Core.dll",
+        "lib/net6.0/Castle.Core.xml",
+        "lib/netstandard2.0/Castle.Core.dll",
+        "lib/netstandard2.0/Castle.Core.xml",
+        "lib/netstandard2.1/Castle.Core.dll",
+        "lib/netstandard2.1/Castle.Core.xml",
         "readme.txt"
       ]
     },
@@ -2629,84 +2626,27 @@
         "lib/netstandard2.1/FakeItEasy.xml"
       ]
     },
-    "FluentAssertions/3.1.229": {
-      "sha512": "ARa41oxa9p5fRCNURQD3CweCURUvqLOmRhAN5Whlu9qo7iVHxnWYQXv4ukJXCWtGNg7VrASIFiXpJyeOx7DMnQ==",
+    "FluentAssertions/5.0.0": {
+      "sha512": "d1HxcAZAcb8dNjPUChLH4VYFUfO8xeyYzKJH3HzcokcW1XnYm/q0noHFWzGvhbotEJAoiNPEaK/BdmftYFRmpg==",
       "type": "package",
-      "path": "fluentassertions/3.1.229",
+      "path": "fluentassertions/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fluentassertions.3.1.229.nupkg.sha512",
+        "fluentassertions.5.0.0.nupkg.sha512",
         "fluentassertions.nuspec",
-        "lib/net40/FluentAssertions.Core.dll",
-        "lib/net40/FluentAssertions.Core.pdb",
-        "lib/net40/FluentAssertions.Core.xml",
-        "lib/net40/FluentAssertions.dll",
-        "lib/net40/FluentAssertions.pdb",
-        "lib/net40/FluentAssertions.xml",
-        "lib/net45/FluentAssertions.Core.dll",
-        "lib/net45/FluentAssertions.Core.pdb",
-        "lib/net45/FluentAssertions.Core.xml",
         "lib/net45/FluentAssertions.dll",
         "lib/net45/FluentAssertions.pdb",
         "lib/net45/FluentAssertions.xml",
-        "lib/portable-monotouch+monoandroid/FluentAssertions.Core.dll",
-        "lib/portable-monotouch+monoandroid/FluentAssertions.Core.pdb",
-        "lib/portable-monotouch+monoandroid/FluentAssertions.Core.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.pdb",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.XML",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.pdb",
-        "lib/portable-win81+wpa81/FluentAssertions.Core.dll",
-        "lib/portable-win81+wpa81/FluentAssertions.Core.pdb",
-        "lib/portable-win81+wpa81/FluentAssertions.Core.xml",
-        "lib/portable-win81+wpa81/FluentAssertions.dll",
-        "lib/portable-win81+wpa81/FluentAssertions.pdb",
-        "lib/portable-win81+wpa81/FluentAssertions.xml",
-        "lib/sl5/FluentAssertions.Core.dll",
-        "lib/sl5/FluentAssertions.Core.pdb",
-        "lib/sl5/FluentAssertions.Core.xml",
-        "lib/sl5/FluentAssertions.dll",
-        "lib/sl5/FluentAssertions.pdb",
-        "lib/sl5/FluentAssertions.xml",
-        "lib/sl5/Microsoft.CSharp.dll",
-        "lib/sl5/Microsoft.CSharp.xml",
-        "lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll",
-        "lib/sl5/Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml",
-        "lib/sl5/System.Xml.Linq.dll",
-        "lib/sl5/System.Xml.Linq.xml",
-        "lib/sl5/de/Microsoft.CSharp.resources.dll",
-        "lib/sl5/de/System.Xml.Linq.resources.dll",
-        "lib/sl5/es/Microsoft.CSharp.resources.dll",
-        "lib/sl5/es/System.Xml.Linq.resources.dll",
-        "lib/sl5/fr/Microsoft.CSharp.resources.dll",
-        "lib/sl5/fr/System.Xml.Linq.resources.dll",
-        "lib/sl5/it/Microsoft.CSharp.resources.dll",
-        "lib/sl5/it/System.Xml.Linq.resources.dll",
-        "lib/sl5/ja/Microsoft.CSharp.resources.dll",
-        "lib/sl5/ja/System.Xml.Linq.resources.dll",
-        "lib/sl5/ko/Microsoft.CSharp.resources.dll",
-        "lib/sl5/ko/System.Xml.Linq.resources.dll",
-        "lib/sl5/ru/Microsoft.CSharp.resources.dll",
-        "lib/sl5/ru/System.Xml.Linq.resources.dll",
-        "lib/sl5/zh-Hans/Microsoft.CSharp.resources.dll",
-        "lib/sl5/zh-Hans/System.Xml.Linq.resources.dll",
-        "lib/sl5/zh-Hant/Microsoft.CSharp.resources.dll",
-        "lib/sl5/zh-Hant/System.Xml.Linq.resources.dll",
-        "lib/win8/FluentAssertions.Core.dll",
-        "lib/win8/FluentAssertions.Core.pdb",
-        "lib/win8/FluentAssertions.Core.xml",
-        "lib/win8/FluentAssertions.XML",
-        "lib/win8/FluentAssertions.dll",
-        "lib/win8/FluentAssertions.pdb",
-        "lib/wp8/FluentAssertions.Core.dll",
-        "lib/wp8/FluentAssertions.Core.pdb",
-        "lib/wp8/FluentAssertions.Core.xml",
-        "lib/wp8/FluentAssertions.dll",
-        "lib/wp8/FluentAssertions.pdb",
-        "lib/wp8/FluentAssertions.xml"
+        "lib/netstandard1.4/FluentAssertions.dll",
+        "lib/netstandard1.4/FluentAssertions.pdb",
+        "lib/netstandard1.4/FluentAssertions.xml",
+        "lib/netstandard1.6/FluentAssertions.dll",
+        "lib/netstandard1.6/FluentAssertions.pdb",
+        "lib/netstandard1.6/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -3371,17 +3311,17 @@
         "microsoft.net.test.sdk.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.0.0",
+      "path": "microsoft.netcore.platforms/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -3907,10 +3847,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Microsoft.Win32.Registry/4.5.0": {
-      "sha512": "+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
+    "Microsoft.Win32.Registry/4.7.0": {
+      "sha512": "KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
       "type": "package",
-      "path": "microsoft.win32.registry/4.5.0",
+      "path": "microsoft.win32.registry/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3918,13 +3858,17 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/Microsoft.Win32.Registry.dll",
         "lib/net461/Microsoft.Win32.Registry.dll",
+        "lib/net461/Microsoft.Win32.Registry.xml",
         "lib/netstandard1.3/Microsoft.Win32.Registry.dll",
         "lib/netstandard2.0/Microsoft.Win32.Registry.dll",
-        "microsoft.win32.registry.4.5.0.nupkg.sha512",
+        "lib/netstandard2.0/Microsoft.Win32.Registry.xml",
+        "microsoft.win32.registry.4.7.0.nupkg.sha512",
         "microsoft.win32.registry.nuspec",
         "ref/net46/Microsoft.Win32.Registry.dll",
         "ref/net461/Microsoft.Win32.Registry.dll",
         "ref/net461/Microsoft.Win32.Registry.xml",
+        "ref/net472/Microsoft.Win32.Registry.dll",
+        "ref/net472/Microsoft.Win32.Registry.xml",
         "ref/netstandard1.3/Microsoft.Win32.Registry.dll",
         "ref/netstandard1.3/Microsoft.Win32.Registry.xml",
         "ref/netstandard1.3/de/Microsoft.Win32.Registry.xml",
@@ -3939,12 +3883,35 @@
         "ref/netstandard2.0/Microsoft.Win32.Registry.dll",
         "ref/netstandard2.0/Microsoft.Win32.Registry.xml",
         "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/net461/Microsoft.Win32.Registry.xml",
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Moq/4.18.2": {
+      "sha512": "SjxKYS5nX6prcaT8ZjbkONh3vnh0Rxru09+gQ1a07v4TM530Oe/jq3Q4dOZPfo1wq0LYmTgLOZKrqRfEx4auPw==",
+      "type": "package",
+      "path": "moq/4.18.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Moq.dll",
+        "lib/net462/Moq.xml",
+        "lib/net6.0/Moq.dll",
+        "lib/net6.0/Moq.xml",
+        "lib/netstandard2.0/Moq.dll",
+        "lib/netstandard2.0/Moq.xml",
+        "lib/netstandard2.1/Moq.dll",
+        "lib/netstandard2.1/Moq.xml",
+        "moq.4.18.2.nupkg.sha512",
+        "moq.nuspec",
+        "moq.png"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -4994,6 +4961,33 @@
         "version.txt"
       ]
     },
+    "System.Diagnostics.EventLog/4.7.0": {
+      "sha512": "iDoKGQcRwX0qwY+eAEkaJGae0d/lHlxtslO+t8pJWAUxlvY3tqLtVOPnW2UU4cFjP0Y/L1QBqhkZfSyGqVMR2w==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Diagnostics.EventLog.dll",
+        "lib/net461/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "ref/net461/System.Diagnostics.EventLog.dll",
+        "ref/net461/System.Diagnostics.EventLog.xml",
+        "ref/net472/System.Diagnostics.EventLog.dll",
+        "ref/net472/System.Diagnostics.EventLog.xml",
+        "ref/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "ref/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.4.7.0.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Diagnostics.Tools/4.3.0": {
       "sha512": "UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
       "type": "package",
@@ -5049,47 +5043,6 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.tools.4.3.0.nupkg.sha512",
         "system.diagnostics.tools.nuspec"
-      ]
-    },
-    "System.Diagnostics.TraceSource/4.3.0": {
-      "sha512": "VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
-      "type": "package",
-      "path": "system.diagnostics.tracesource/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Diagnostics.TraceSource.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Diagnostics.TraceSource.dll",
-        "ref/netstandard1.3/System.Diagnostics.TraceSource.dll",
-        "ref/netstandard1.3/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/de/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/es/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/fr/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/it/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/ja/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/ko/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/ru/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/zh-hans/System.Diagnostics.TraceSource.xml",
-        "ref/netstandard1.3/zh-hant/System.Diagnostics.TraceSource.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
-        "runtimes/win/lib/net46/System.Diagnostics.TraceSource.dll",
-        "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
-        "system.diagnostics.tracesource.4.3.0.nupkg.sha512",
-        "system.diagnostics.tracesource.nuspec"
       ]
     },
     "System.Diagnostics.Tracing/4.3.0": {
@@ -7243,10 +7196,10 @@
         "system.runtime.serialization.primitives.nuspec"
       ]
     },
-    "System.Security.AccessControl/4.5.0": {
-      "sha512": "vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
+    "System.Security.AccessControl/4.7.0": {
+      "sha512": "JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
       "type": "package",
-      "path": "system.security.accesscontrol/4.5.0",
+      "path": "system.security.accesscontrol/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7254,8 +7207,10 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.AccessControl.dll",
         "lib/net461/System.Security.AccessControl.dll",
+        "lib/net461/System.Security.AccessControl.xml",
         "lib/netstandard1.3/System.Security.AccessControl.dll",
         "lib/netstandard2.0/System.Security.AccessControl.dll",
+        "lib/netstandard2.0/System.Security.AccessControl.xml",
         "lib/uap10.0.16299/_._",
         "ref/net46/System.Security.AccessControl.dll",
         "ref/net461/System.Security.AccessControl.dll",
@@ -7276,10 +7231,12 @@
         "ref/uap10.0.16299/_._",
         "runtimes/win/lib/net46/System.Security.AccessControl.dll",
         "runtimes/win/lib/net461/System.Security.AccessControl.dll",
+        "runtimes/win/lib/net461/System.Security.AccessControl.xml",
         "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.AccessControl.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.accesscontrol.4.5.0.nupkg.sha512",
+        "system.security.accesscontrol.4.7.0.nupkg.sha512",
         "system.security.accesscontrol.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7625,10 +7582,10 @@
         "version.txt"
       ]
     },
-    "System.Security.Principal.Windows/4.5.0": {
-      "sha512": "U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
+    "System.Security.Principal.Windows/4.7.0": {
+      "sha512": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "type": "package",
-      "path": "system.security.principal.windows/4.5.0",
+      "path": "system.security.principal.windows/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7636,12 +7593,16 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net46/System.Security.Principal.Windows.dll",
         "lib/net461/System.Security.Principal.Windows.dll",
+        "lib/net461/System.Security.Principal.Windows.xml",
         "lib/netstandard1.3/System.Security.Principal.Windows.dll",
         "lib/netstandard2.0/System.Security.Principal.Windows.dll",
+        "lib/netstandard2.0/System.Security.Principal.Windows.xml",
         "lib/uap10.0.16299/_._",
         "ref/net46/System.Security.Principal.Windows.dll",
         "ref/net461/System.Security.Principal.Windows.dll",
         "ref/net461/System.Security.Principal.Windows.xml",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.dll",
+        "ref/netcoreapp3.0/System.Security.Principal.Windows.xml",
         "ref/netstandard1.3/System.Security.Principal.Windows.dll",
         "ref/netstandard1.3/System.Security.Principal.Windows.xml",
         "ref/netstandard1.3/de/System.Security.Principal.Windows.xml",
@@ -7657,12 +7618,19 @@
         "ref/netstandard2.0/System.Security.Principal.Windows.xml",
         "ref/uap10.0.16299/_._",
         "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/net46/System.Security.Principal.Windows.dll",
         "runtimes/win/lib/net461/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net461/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Security.Principal.Windows.xml",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netcoreapp2.1/System.Security.Principal.Windows.xml",
         "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll",
         "runtimes/win/lib/uap10.0.16299/_._",
-        "system.security.principal.windows.4.5.0.nupkg.sha512",
+        "system.security.principal.windows.4.7.0.nupkg.sha512",
         "system.security.principal.windows.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -8585,8 +8553,9 @@
     ".NETCoreApp,Version=v3.1": [
       "FMS_Store >= 1.0.0",
       "FakeItEasy >= 7.3.1",
-      "FluentAssertions >= 3.1.229",
+      "FluentAssertions >= 5.0.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
+      "Moq >= 4.18.2",
       "coverlet.collector >= 3.1.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -8641,11 +8610,15 @@
           },
           "FluentAssertions": {
             "target": "Package",
-            "version": "[3.1.229, )"
+            "version": "[5.0.0, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.11.0, )"
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.18.2, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -8682,17 +8655,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'FluentAssertions 3.1.229' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "FluentAssertions",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

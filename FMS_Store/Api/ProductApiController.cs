@@ -40,27 +40,32 @@ namespace FMS_Store.Api
                     
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode(500, ex.Message);
+                return BadRequest();
             }
         }
 
         [HttpGet]
-        public ActionResult<Product> Get(int id)
+        public ActionResult<Product> Get(int? id)
         {
+            if (id == null)
+            {
+                return BadRequest();
+            }
             try
             {
-                var result = _dataRepository.Find(id);
+                var result = _dataRepository.Find((int)id);
                 if (result == null)
                 {
                     return NotFound();
                 }
                 return Ok(result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode(500, ex.Message);
+                //return StatusCode(500, ex.Message);
+                return BadRequest();
             }
         }
         [HttpGet]
@@ -70,15 +75,12 @@ namespace FMS_Store.Api
             {
 
                 var result = _dataRepository2.List();
-                if (result == null)
-                {
-                    return NotFound();
-                }
+                
                 return Ok(result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode(500, ex.Message);
+                return BadRequest();
             }
         }
 

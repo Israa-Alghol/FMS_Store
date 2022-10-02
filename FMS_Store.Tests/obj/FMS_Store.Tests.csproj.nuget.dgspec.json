@@ -50,11 +50,15 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[3.1.229, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.11.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -132,6 +136,10 @@
               "target": "Package",
               "version": "[7.3.1, )"
             },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.29, )"
@@ -151,6 +159,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.29, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
             }
           },
           "imports": [
