@@ -148,3 +148,5 @@ D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debu
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debug\netcoreapp3.1\FMS_Store.Tests.pdb
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debug\netcoreapp3.1\FMS_Store.Tests.genruntimeconfig.cache
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Moq.dll
+D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\RestSharp.dll
+D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\System.Text.Json.dll

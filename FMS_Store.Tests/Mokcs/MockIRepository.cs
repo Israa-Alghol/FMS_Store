@@ -5,6 +5,7 @@ using Moq;
 using FMS_Store.Repositories;
 using FMS_Store.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
 
 namespace FMS_Store.Tests.Mokcs
 {
@@ -23,8 +24,16 @@ namespace FMS_Store.Tests.Mokcs
                     Price = 12000,
                     Description = "for child",
                     ImageUrl = "",
-                    CategoryId = 1
+                    CategoryId = 1,
+                    Category = new Category
+                    {
+
+                        Id = 1,
+                        Type = "Game",
+                       
+                    }
                 }
+                
             };
             mock.Setup(m => m.List()).Returns(() => product);
 
@@ -39,6 +48,17 @@ namespace FMS_Store.Tests.Mokcs
 
             return mock;
         }
+        public static Mock<IRepo<Category>> GetMock2()
+        {
+            var mock = new Mock<IRepo<Category>>();
+            return mock;
+            
+        }
+        public static Mock<IWebHostEnvironment > GetMock3()
+        {
+            var mock = new Mock<IWebHostEnvironment>();
+            return mock;
+        }
 
-    }
+        }
 }

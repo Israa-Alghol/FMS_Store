@@ -25,6 +25,7 @@ namespace FMS_Store.Controllers
             this.hosting = hosting;
         }
 
+
         // GET: ProductController
         [HttpGet]
         public ActionResult Index()
