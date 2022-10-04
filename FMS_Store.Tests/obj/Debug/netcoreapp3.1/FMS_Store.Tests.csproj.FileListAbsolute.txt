@@ -1,4 +1,3 @@
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debug\netcoreapp3.1\FMS_Store.Tests.csproj.AssemblyReference.cache
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debug\netcoreapp3.1\FMS_Store.Tests.GeneratedMSBuildEditorConfig.editorconfig
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debug\netcoreapp3.1\FMS_Store.Tests.AssemblyInfoInputs.cache
@@ -25,8 +24,6 @@ D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debu
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\FakeItEasy.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\FluentAssertions.dll
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -35,9 +32,6 @@ D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debu
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -150,3 +144,5 @@ D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\obj\Debu
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Moq.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\RestSharp.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store.Tests\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll

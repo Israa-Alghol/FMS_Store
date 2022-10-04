@@ -27,8 +27,6 @@ namespace FMS_Store.Tests.Repository
                .UseSqlServer(connectionString)
                .Options;
 
-
-
         }
         public ProductApiControllerTest()
         {

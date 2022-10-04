@@ -39,6 +39,7 @@ namespace FMS_Store
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+            //services.AddDbContext<ProductDBContext>(opt => opt.UseInMemoryDatabase());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +69,8 @@ namespace FMS_Store
             });
 
 
-
+            //var context = app.ApplicationServices.GetService<ProductDBContext>();
+            //Task_AddProduct_ReturnProduct(context);
 
             //app.Run(async context =>
             //{

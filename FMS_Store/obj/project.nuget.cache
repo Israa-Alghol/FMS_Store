@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "av0xYr8L8U48Oje70rqftarzgti8f3wQzpw/jtUxhWu1CQ+T7jP+/mqu/qortz2M0ZNGrxmxwxChRj7w1izssg==",
+  "dgSpecHash": "FbkAVjVPo9dggsu2jejRt0mZwkdg/kNtjQ5RFc18VXVGTKEx0kk8ngonvJLLI2zBPRjo6VGSysRIHjZe7zYEoA==",
   "success": true,
   "projectFilePath": "D:\\Israa's Work Files\\Projects\\FMS_Store_Test\\FMS_Store\\FMS_Store\\FMS_Store.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.29\\microsoft.entityframeworkcore.abstractions.3.1.29.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.29\\microsoft.entityframeworkcore.analyzers.3.1.29.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.29\\microsoft.entityframeworkcore.design.3.1.29.nupkg.sha512",
+    "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\1.0.1\\microsoft.entityframeworkcore.inmemory.1.0.1.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.29\\microsoft.entityframeworkcore.relational.3.1.29.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.29\\microsoft.entityframeworkcore.sqlserver.3.1.29.nupkg.sha512",
     "C:\\Users\\Ialghoul\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.29\\microsoft.entityframeworkcore.tools.3.1.29.nupkg.sha512",
