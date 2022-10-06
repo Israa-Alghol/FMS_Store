@@ -166,3 +166,4 @@ D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store\obj\Debug\netc
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store\bin\Debug\netcoreapp3.1\FluentAssertions.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store\bin\Debug\netcoreapp3.1\Moq.dll
 D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Israa's Work Files\Projects\FMS_Store_Test\FMS_Store\FMS_Store\obj\Debug\netcoreapp3.1\FMS_Store.csproj.AssemblyReference.cache

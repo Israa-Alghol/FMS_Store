@@ -35,10 +35,7 @@ namespace FMS_Store.Tests.Mokcs
                 }
                 
             };
-            mock.Setup(m => m.List()).Returns(() => product);
 
-            mock.Setup(m => m.Find(It.IsAny<int>()))
-               .Returns((int id) => product.FirstOrDefault(o => o.Id == id));
 
             mock.Setup(m => m.Add(It.IsAny<Product>()))
                .Callback(() => { return; });
@@ -48,17 +45,17 @@ namespace FMS_Store.Tests.Mokcs
 
             return mock;
         }
-        public static Mock<IRepo<Category>> GetMock2()
-        {
-            var mock = new Mock<IRepo<Category>>();
-            return mock;
+        //public static Mock<IRepo<Category>> GetMock2()
+        //{
+        //    var mock = new Mock<IRepo<Category>>();
+        //    return mock;
             
-        }
-        public static Mock<IWebHostEnvironment > GetMock3()
-        {
-            var mock = new Mock<IWebHostEnvironment>();
-            return mock;
-        }
+        //}
+        //public static Mock<IWebHostEnvironment > GetMock3()
+        //{
+        //    var mock = new Mock<IWebHostEnvironment>();
+        //    return mock;
+        //}
 
-        }
+    }
 }

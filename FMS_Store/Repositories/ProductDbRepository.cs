@@ -21,6 +21,7 @@ namespace FMS_Store.Repositories
             
             db.Products.Add(entity);
             db.SaveChanges();
+            //var x = db.Products.ToList();
         }
 
         public void Delete(int id)
@@ -53,6 +54,8 @@ namespace FMS_Store.Repositories
 
         public void Update(Product newProduct)
         {
+
+            //var x = db.Products.ToList();
             db.Update(newProduct);
             db.SaveChanges();
         }

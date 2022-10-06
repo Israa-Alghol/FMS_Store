@@ -47,66 +47,66 @@ namespace FMS_Store.Tests.Api
             var valid = ValidateModel(product);
             Assert.Equal(valid,isValid);
         }
-        [Fact]
-        public void WhenGettingAllProducts_ThenAllProductsReturn()
-        {
-            //Arrange
-            var repositoryMock = MockIRepository.GetMock();
-            var repositoryMock2 = MockIRepository.GetMock2();
-            var repositoryMock3 = MockIRepository.GetMock3();
-            var controller = new ProductController(repositoryMock.Object, repositoryMock2.Object, repositoryMock3.Object);
+        //[Fact]
+        //public void WhenGettingAllProducts_ThenAllProductsReturn()
+        //{
+        //    //Arrange
+        //    var repositoryMock = MockIRepository.GetMock();
+        //    var repositoryMock2 = MockIRepository.GetMock2();
+        //    var repositoryMock3 = MockIRepository.GetMock3();
+        //    var controller = new ProductController(repositoryMock.Object, repositoryMock2.Object, repositoryMock3.Object);
 
-            //Act
-            var result = controller.Index() as ObjectResult;
+        //    //Act
+        //    var result = controller.Index() as ObjectResult;
 
-            //Assert
-            Assert.NotNull(result);
-            Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
-            Assert.IsAssignableFrom<IEnumerable<Product>>(result.Value);
-            Assert.NotEmpty(result.Value as IEnumerable<Product>);
-        }
-        [Fact]
-        public void GivenValidRequest_WhenCreatingProduct_ThenCreatedReturns()
-        {
-            //Arrange
-            var repositoryMock = MockIRepository.GetMock();
-            var repositoryMock2 = MockIRepository.GetMock2();
-            //var repositoryMock2 = new CategoryDbRepository();
-            var repositoryMock3 = MockIRepository.GetMock3();
-            var controller = new ProductController(repositoryMock.Object, repositoryMock2.Object, repositoryMock3.Object);
+        //    //Assert
+        //    Assert.NotNull(result);
+        //    Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
+        //    Assert.IsAssignableFrom<IEnumerable<Product>>(result.Value);
+        //    Assert.NotEmpty(result.Value as IEnumerable<Product>);
+        //}
+        //[Fact]
+        //public void GivenValidRequest_WhenCreatingProduct_ThenCreatedReturns()
+        //{
+        //    //Arrange
+        //    var repositoryMock = MockIRepository.GetMock();
+        //    var repositoryMock2 = MockIRepository.GetMock2();
+        //    //var repositoryMock2 = new CategoryDbRepository();
+        //    var repositoryMock3 = MockIRepository.GetMock3();
+        //    var controller = new ProductController(repositoryMock.Object, repositoryMock2.Object, repositoryMock3.Object);
 
-            //HttpClient client = new HttpClient();
-            var product = new ProductCategoryViewModel()
-            {
-                ProductId = 1,
-                Name = "TestName",
-                Price = 1000,
-                Description = "TestDescription",                
-                Category = 1,
-                Categories = new List<Category>()
-                {
-                    new Category()
-                    {
-                        Id = 1,
-                        Type = "Test",
+        //    //HttpClient client = new HttpClient();
+        //    var product = new ProductCategoryViewModel()
+        //    {
+        //        ProductId = 1,
+        //        Name = "TestName",
+        //        Price = 1000,
+        //        Description = "TestDescription",                
+        //        Category = 1,
+        //        Categories = new List<Category>()
+        //        {
+        //            new Category()
+        //            {
+        //                Id = 1,
+        //                Type = "Test",
                         
-                    }
-                },
-                ImageUrl = "",
+        //            }
+        //        },
+        //        ImageUrl = "",
 
 
-            };
+        //    };
 
-            //client.PostAsync("", );
+        //    //client.PostAsync("", );
 
-            //Act
-            var result = controller.Create(product) as ObjectResult;
-            //Assert
-            Assert.NotNull(result);
-            Assert.IsAssignableFrom<CreatedAtRouteResult>(result);
-            Assert.Equal((int)HttpStatusCode.Created, result!.StatusCode);
-            Assert.Equal("Create", (result as CreatedAtRouteResult)!.RouteName);
-        }
+        //    //Act
+        //    var result = controller.Create(product) as ObjectResult;
+        //    //Assert
+        //    Assert.NotNull(result);
+        //    Assert.IsAssignableFrom<CreatedAtRouteResult>(result);
+        //    Assert.Equal((int)HttpStatusCode.Created, result!.StatusCode);
+        //    Assert.Equal("Create", (result as CreatedAtRouteResult)!.RouteName);
+        //}
        
     }
 }
